@@ -9,6 +9,10 @@ network OPSLiteNetwork
 
         // statistics
         // from application layer
+        
+        @statistic[sumReceivedBundles](source=sum(totalBundlesReceived);record=max,last,vector);
+		@statistic[sumSentBundles](source=sum(totalBundlesSent);record=max,last,vector);
+		
         // stat: liked data bytes received by all nodes
         @statistic[likedDataBytesReceivedSum](source=sum(likedDataBytesReceived);record=max,last,vector);
 
@@ -56,6 +60,11 @@ network OPSLiteNetwork
 		// from wireless layer
 		// stat: size of nodes in the wireless neghbourhood
 		@statistic[neighbourhoodSize](source=neighbourhoodSize;record=min,max,mean,vector);
+		
+		
+		
+		
+		
 		
     submodules:
 

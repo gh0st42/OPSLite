@@ -31,8 +31,8 @@ module OPSNode
     submodules:
 
         // application layer
-        application: KHeraldApp {
-            nodeIndex = nodeID;
+        application: KDtnApp {
+            nodeIndex = parent.nodeID;
             @display("p=122,28");
         }
 
